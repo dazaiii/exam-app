@@ -1,4 +1,10 @@
-<h1>The exam is completed</h1>
-<p>You have answered {{ correctAnswers() }} out of {{ total() }} questions correctly.</p>
-<p>Score: {{ score() }}</p>
-<button (click)="repeatLevel.emit()">Repeat Level</button>
+<div class="done">
+  <div class="header">
+    <h1>The exam is completed</h1>
+    <mat-icon class="green-icon">check_circle</mat-icon>
+  </div>
+  <p>You have answered {{ correctAnswers() }} out of {{ total() }} questions correctly.</p>
+  <p>Score: {{ score() }}%</p>
+  <button matButton="filled" (click)="repeatLevel.emit()">Repeat Level</button>
+  <button matButton="outlined" (click)="changeDifficulty.emit()">Change difficulty</button>
+</div>

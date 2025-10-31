@@ -1,17 +1,13 @@
-.done {
+.difficulty {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
-.header {
+.start-exam {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-}
-
-.green-icon {
-  color: green;
+  justify-content: center;
+  margin-top: 2rem;
 }

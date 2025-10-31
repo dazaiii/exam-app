@@ -1,8 +1,11 @@
 import { Component, computed, input, output } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-completed-exam',
-  imports: [],
+  standalone: true,
+  imports: [MatIconModule, MatButtonModule],
   templateUrl: './completed-exam.html',
   styleUrl: './completed-exam.scss',
 })
@@ -13,4 +16,5 @@ export class CompletedExam {
     () => (this.total() === 0 ? 0 : this.correctAnswers() / this.total()) * 100
   );
   readonly repeatLevel = output<void>();
+  readonly changeDifficulty = output<void>();
 }

@@ -1,2 +1,5 @@
-<p class="progress">{{ progress() }}%</p>
+<div class="progress">
+  <p>Difficulty: {{ level() }}</p>
+  <p>{{ progress() }}%</p>
+</div>
 <mat-progress-bar mode="determinate" [value]="progress()"></mat-progress-bar>

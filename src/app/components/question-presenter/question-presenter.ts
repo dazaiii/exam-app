@@ -3,6 +3,7 @@ import { Question } from '../../models/question.model';
 
 @Component({
   selector: 'app-question-presenter',
+  standalone: true,
   imports: [],
   templateUrl: './question-presenter.html',
   styleUrl: './question-presenter.scss',

@@ -18,7 +18,9 @@
 }
 
 .answer {
-  padding: 0.5rem 0.5rem 0.5rem 0;
+  display: flex;
+  align-items: stretch;
+  padding: 0;
   border: 1px solid steelblue;
   border-radius: 4px;
   cursor: pointer;
@@ -29,14 +31,22 @@
 }
 
 .index {
-  font-weight: bold;
-  margin-right: 0.5rem;
-  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: steelblue;
-  padding: 0.55rem 1rem;
   color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0 1rem;
+  border-radius: 4px;
+  border: 1px solid;
 }
 
 .text {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: 0.5rem;
   font-size: 1rem;
 }

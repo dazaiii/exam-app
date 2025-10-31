@@ -1,17 +1,29 @@
-<app-progress-indicator
-  [current]="store.currentQuestionIndex()"
-  [total]="store.questionsCount()"
-></app-progress-indicator>
+<div class="container">
+  @if(store.changeDifficultyMenu()) {
+  <app-difficulty-menu
+    [level]="store.level()"
+    (increaseLevel)="store.increaseExamLevel()"
+    (decreaseLevel)="store.decreaseExamLevel()"
+    (startExam)="store.startExam()"
+  ></app-difficulty-menu>
+  } @else {
+  <app-progress-indicator
+    [current]="store.currentQuestionIndex()"
+    [total]="store.questionsCount()"
+    [level]="store.level()"
+  ></app-progress-indicator>
 
-@if(store.isQuizCompleted()) {
-<app-completed-exam
-  [total]="store.questionsCount()"
-  [correctAnswers]="store.correctAnswersCount()"
-  (repeatLevel)="store.repeatLevel()"
-></app-completed-exam>
-} @else {
-<app-question-presenter
-  [question]="store.currentQuestion()"
-  (answered)="store.answerCurrentQuestion($event)"
-></app-question-presenter>
-}
+  @if(store.isQuizCompleted()) {
+  <app-completed-exam
+    [total]="store.questionsCount()"
+    [correctAnswers]="store.correctAnswersCount()"
+    (repeatLevel)="store.repeatLevel()"
+    (changeDifficulty)="store.openChangeDifficultyMenu()"
+  ></app-completed-exam>
+  } @else {
+  <app-question-presenter
+    [question]="store.currentQuestion()"
+    (answered)="store.answerCurrentQuestion($event)"
+  ></app-question-presenter>
+  } }
+</div>

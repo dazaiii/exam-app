@@ -1,0 +1,9 @@
+<div class="difficulty">
+  <h1>Difficulty</h1>
+  <button matButton="outlined" (click)="increaseLevel.emit()">+</button>
+  <span>{{ level() }}</span>
+  <button matButton="outlined" (click)="decreaseLevel.emit()">-</button>
+</div>
+<div class="start-exam">
+  <button matButton="filled" (click)="startExam.emit()">Start exam</button>
+</div>
