@@ -1,12 +1,16 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
+import { ExamService } from './services/exam.service';
+import { QuestionPresenter } from './components/question-presenter/question-presenter';
+import { CompletedExam } from './components/completed-exam/completed-exam';
+import { ProgressIndicator } from './components/progress-indicator/progress-indicator';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [RouterOutlet, QuestionPresenter, CompletedExam, ProgressIndicator],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('exam-app');
+  readonly store = inject(ExamService);
 }
